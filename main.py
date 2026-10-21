@@ -1,8 +1,14 @@
-from time import sleep
+import time
 import sys
+
 if __name__ == "__main__":
-    input("wait... Press enter...")
-    sleep(1)
+    print("Waiting for user input...")
+    try:
+        input("Press Enter to continue...")
+    except EOFError:
+        pass
+
+    time.sleep(1)
     print("Hello world")
-    input()
-    sys.exit()
+    input("Press Enter to exit...")
+    sys.exit(0)
